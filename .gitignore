@@ -1,1 +1,64 @@
-/target
+# =========================
+# Environment & Secrets
+# =========================
+
+.env
+.env.*
+!.env.example
+
+# =========================
+# Node.js
+# =========================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Rust Build Artifacts
+# =========================
+
+target/
+
+# =========================
+# Compiled Binaries
+# =========================
+
+*.exe
+
+# =========================
+# Local Claude Configuration
+# =========================
+
+.claude/settings.local.json
+
+# =========================
+# Logs
+# =========================
+
+*.log
+logs/
+
+# =========================
+# Operating System Files
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+# Temporary Files
+# =========================
+
+*.tmp
+*.temp
+
+# =========================
+# Local IDE Files
+# =========================
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
