@@ -1,0 +1,34 @@
+[package]
+name = "ax-terminal"
+version = "1.0.0"
+edition = "2021"
+description = "AX-Connect Platform Management CLI"
+
+[[bin]]
+name = "ax-terminal"
+path = "src/main.rs"
+
+[dependencies]
+# Blocking HTTP client — pure Rust, no async, no TLS (localhost only)
+# default-features = false removes rustls/ring (needs gcc to compile C code)
+ureq = { version = "2.9", default-features = false, features = ["json"] }
+
+# JSON serialisation / deserialisation
+serde      = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Terminal colours and cursor control (cross-platform ANSI)
+crossterm = "0.27"
+
+# Masked password input
+rpassword = "7"
+
+# readline-like REPL: history, arrow keys, line editing, clipboard (Ctrl+Y)
+rustyline = { version = "14", default-features = false, features = ["with-file-history", "custom-bindings"] }
+
+[profile.release]
+opt-level     = 3
+lto           = true
+codegen-units = 1
+panic         = "abort"
+strip         = true

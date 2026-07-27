@@ -1,0 +1,32 @@
+{
+  "name": "ax-terminal",
+  "version": "1.0.0",
+  "description": "AX-Connect Platform Management CLI",
+  "main": "cli/index.js",
+  "bin": "cli/index.js",
+  "scripts": {
+    "start": "node cli/index.js",
+    "dev": "node cli/index.js",
+    "build": "pkg . --targets node20-win-x64 --output dist/ax-terminal.exe"
+  },
+  "pkg": {
+    "assets": [],
+    "scripts": [
+      "cli/**/*.js",
+      "core/**/*.js",
+      "commands/**/*.js",
+      "config/**/*.js",
+      "services/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "^6.14.2"
+  }
+}
